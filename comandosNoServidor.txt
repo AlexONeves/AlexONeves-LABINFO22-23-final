@@ -1,0 +1,16 @@
+    1  history
+    2  git clone https://github.com/AlexONeves/AlexONeves-LABINFO22-23-final.git
+    3  ls
+    4  cd AlexONeves-LABINFO22-23-final
+    5  pwd
+    6  vi index.html
+    7  ls
+    8  cat index.html
+    9  git status
+   10  git add .
+   11  git commit -m "Criação do ficheiro index.html"
+   12  git config --global user.email "duartenevesalexandre@ua.pt"
+   13  git config --global user.name "AlexONeves"
+   14  git commit -m "Criação do ficheiro index.html"
+   15  git push origin main
+   16  history > comandosNoServidor.txt
