@@ -18,44 +18,102 @@
 			  
 			</div>
 		  </nav>
-	   <main class="text-center ">
-		 <h1>Prova final Lab Info 2022/2023</h1>
-		 <p class="fs-5 text-muted">Esta página foi desenhada na prova final da disciplina de Laboratórios de
-			informática</p>
-		
-		 <h2>Exemplo Tabela</h2>
-		 <table class="table table-striped">
-			<tr>
-				<th>Data</th>
-				<th>Preço(com sparkline)<span class="inlinebar">120,90,120,130,125</span></th>
-				<th>Preço(sem sparkline)</th>
-			</tr>
-			<tr>
-				<td>01/01/2022</td>
-				<td>120</td>
-				<td>90</td>
-			</tr>
-			<tr>
-				<td>02/01/2022</td>
-				<td>90</td>
-				<td>95</td>
-			</tr>
-			<tr>
-				<td>03/01/2022</td>
-				<td>120</td>
-				<td>105</td>
-			</tr>
-			<tr>
-				<td>04/01/2022</td>
-				<td>130</td>
-				<td>110</td>
-			</tr>
-			<tr>
-				<td>05/01/2022</td>
-				<td>125</td>
-				<td>115</td>
-			</tr>
-		 </table>
+	   <main>
+		<div class="row">
+			<div class="col-5">
+				<h1>Nome do Aluno</h1>
+		 		<h2>NMEC:112963</h2>
+			</div>
+			<div class="col-7">
+				
+				<h2>Contacto</h2>
+			
+					<form class="needs-validation" novalidate>
+						<div class="row">
+					
+						<div class="col-6">
+							<div class="mb-4">
+								<label for="Nome" class="form-label">Nome</label>
+								<input type="Text" class="form-control" id="Nome"  required>
+								<div class="invalid-feedback">
+									Campo Obrigatório
+								  </div>
+							</div>
+							
+						
+						</div>
+						<div class="col-6">
+							<div class="mb-4">
+							<label for="Apelido" class="form-label">Apelido</label>
+							<input type="Text" class="form-control" id="Apelido" required>
+							<div class="invalid-feedback">
+								Campo Obrigatório
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="mb-5">
+							<label for="Email" class="form-label">Email</label>
+							<input type="email" class="form-control" id="Email" placeholder="you@example.com" required>
+							<div class="invalid-feedback">
+								Campo Obrigatório
+							  </div>
+							</div>
+						</div>
+					<div class="row">
+						<div class="col">
+							<div class="mb-5">
+								<label for="Adress" class="form-label">Endereço</label>
+								<input type="text" class="form-control" id="Adress" placeholder="1234 Main St" required>
+								<div class="invalid-feedback">
+									Campo Obrigatório
+								  </div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="mb-5">
+								<label for="Adress2" class="form-label">Endereço 2 (Opcional)</label>
+								<input type="text" class="form-control" id="Adress2" placeholder="Apartment or Suite">
+								
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<div class="mb-4">
+								<label for="CP" class="form-label">Codigo Postal</label>
+								<input type="text" class="form-control" id="CP"  required>
+								<div class="invalid-feedback">
+									Campo Obrigatório
+								  </div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="mb-4">
+								<label for="Localidade" class="form-label">Localidade</label>
+								<input type="text" class="form-control" id="Local"  required>
+								<div class="invalid-feedback">
+									Campo Obrigatório
+								  </div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<button class="btn btn-primary" type="submit">Submit form</button>
+						  </div>
+					</div>
+					</div>
+				</form>
+				
+				
+			</div>
+		</div>
+		 
 	   </main>
 	 
 	</div>
@@ -64,11 +122,27 @@
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js" integrity="sha512-3PRVLmoBYuBDbCEojg5qdmd9UhkPiyoczSFYjnLhFb2KAFsWWEMlAPt0olX1Nv7zGhDfhGEVkXsu51a55nlYmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js" integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	 <script type="text/javascript">
-		$(function () {   
-			$('.inlinebar').sparkline('html', { type: 'bar', barColor: 'red' });
-		});
+	 <script>
+					(() => {
+							'use strict'
+
+							// Fetch all the forms we want to apply custom Bootstrap validation styles to
+							const forms = document.querySelectorAll('.needs-validation')
+
+							// Loop over them and prevent submission
+							Array.from(forms).forEach(form => {
+								form.addEventListener('submit', event => {
+								if (!form.checkValidity()) {
+									event.preventDefault()
+									event.stopPropagation()
+								}
+
+								form.classList.add('was-validated')
+								}, false)
+							})
+							})()
 	 </script>
+	 
      
 
 		
